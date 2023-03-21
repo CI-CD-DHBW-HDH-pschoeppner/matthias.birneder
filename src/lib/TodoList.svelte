@@ -5,11 +5,8 @@
   let filteredTodos: TodoItem[];
 
   $: filteredTodos = todos.filter((todo) => {
-    // TODO: es sollen nur die Items zurückgegeben werden, die den searchString (case insensitive) enthalten
-    // Hier muss ein boolean zurückgegeben werden, der bestimmt, ob das Item (todo) angezeigt wird, oder nicht
     const todoValue = todo.value.toLowerCase();
     const search = searchString.toLowerCase();
-
     return todoValue.includes(search);
   });
 
