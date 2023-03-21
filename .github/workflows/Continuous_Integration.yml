@@ -1,7 +1,7 @@
 name: Continuous_Integration
 on: [push]
 jobs:
-  CI pipeline:
+  CI-pipeline:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
