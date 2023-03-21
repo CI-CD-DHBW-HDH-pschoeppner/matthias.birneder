@@ -1,20 +1,26 @@
-name: Continuous_Integration
+name: Continuous-Integration-Pipeline
 on: [push]
 jobs:
-  CI-pipeline:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
         uses: actions/checkout@v3
+
       - name: NPM install
         run: npm install
-      #- name: Svelte check
-      #  run: npm run check
+
+      - name: Svelte check
+        run: npm run check
+
       - name: format check
         run: npm run format:check
+
       - name: eslint check
         run: npm run lint
+
       - name: Run test
         run: npm run test
+
       - name: Run build
         run: npm run build

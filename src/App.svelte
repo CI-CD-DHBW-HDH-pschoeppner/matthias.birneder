@@ -37,6 +37,9 @@
   }
 </script>
 
+<svelte:head>
+  <link rel="icon" type="image/svg" href={"../img/globe.png"} />
+</svelte:head>
 <main>
   <h1>Todos:</h1>
   <TodoList {todos} />

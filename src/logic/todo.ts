@@ -57,7 +57,7 @@ export function generateColor(): string {
   const r = Math.floor(Math.random() * 101) + 50;
   const g = Math.floor(Math.random() * 101) + 50;
   const b = Math.floor(Math.random() * 101) + 50;
-  return "rgb(" + String(r) + "," + String(g) + "," + String(b) + ")";
+  return "rgb(" + r.toString() + "," + g.toString() + "," + b.toString() + ")";
 }
 
 export const todoList = writable<TodoItem[]>([]);

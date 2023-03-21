@@ -15,6 +15,7 @@ describe("test generate random id", () => {
     const id1: string = generateID();
     const id2: string = generateID();
     expect(id1).not.toEqual(id2);
+    expect(id1).not.toBe(id2);
   });
 });
 
@@ -58,9 +59,15 @@ describe("formatTodo", () => {
 });
 
 describe("generateColor", () => {
-  test("should generate an rgb color with values between 50 and 150", () => {
+  test("generated color is not equal to another generated color", () => {
     const color1: string = generateColor();
     const color2: string = generateColor();
     expect(color1).not.toEqual(color2);
+  });
+  test("should generate an rgb color with the format rgb(r,g,b) and between 50 and 150", () => {
+    const color = generateColor();
+    const regex =
+      /^rgb\([5-9][0-9],|1[0-4][0-9],|150,\)\([5-9][0-9],|1[0-4][0-9],|150,\)\([5-9][0-9],|1[0-4][0-9],|150,\)$/;
+    expect(regex.test(color)).toBe(true);
   });
 });
